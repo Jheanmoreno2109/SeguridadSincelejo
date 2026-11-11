@@ -1,0 +1,232 @@
+﻿==============================================================================
+ REDSEGURA SINCELEJO - Estructuras de Datos II
+ ├ürboles y grafos aplicados a una red de atenci├│n de emergencias
+ Datos simulados con fines acad├®micos; no son informaci├│n oficial.
+==============================================================================
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: 
+==============================================================================
+Q1: Buscar Hospital Universitario en el ABB y en el AVL
+==============================================================================
+ABB: encontrado Hospital Universitario (S05) en 3 comparaciones.
+AVL: encontrado Hospital Universitario (S05) en 1 comparaciones.
+Altura del ABB: 7 niveles; altura del AVL: 4 niveles.
+El AVL necesit├│ 2 comparaci├│n(es) menos que el ABB.
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: 
+==============================================================================
+Q2: Demostrar las cuatro rotaciones AVL con tres claves
+==============================================================================
+Caso LL: Rotaci├│n simple a la derecha (izquierda-izquierda)
+  Secuencia insertada: 30, 20, 10
+  Rotaciones registradas: [LL en clave 30 (factor 2, altura 3)]
+  Ra├¡z resultante: 20 | Altura: 2 | Inorden: 10, 20, 30
+  El recorrido inorden permanece ordenado.
+Caso RR: Rotaci├│n simple a la izquierda (derecha-derecha)
+  Secuencia insertada: 10, 20, 30
+  Rotaciones registradas: [RR en clave 10 (factor -2, altura 3)]
+  Ra├¡z resultante: 20 | Altura: 2 | Inorden: 10, 20, 30
+  El recorrido inorden permanece ordenado.
+Caso LR: Rotaci├│n doble izquierda-derecha
+  Secuencia insertada: 30, 10, 20
+  Rotaciones registradas: [LR en clave 30 (factor 2, altura 3)]
+  Ra├¡z resultante: 20 | Altura: 2 | Inorden: 10, 20, 30
+  El recorrido inorden permanece ordenado.
+Caso RL: Rotaci├│n doble derecha-izquierda
+  Secuencia insertada: 10, 30, 20
+  Rotaciones registradas: [RL en clave 10 (factor -2, altura 3)]
+  Ra├¡z resultante: 20 | Altura: 2 | Inorden: 10, 20, 30
+  El recorrido inorden permanece ordenado.
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: 
+==============================================================================
+Q3: Lista de adyacencia y matrices de adyacencia e incidencia
+==============================================================================
+Orden de v├®rtices: [S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12]
+Orden de conexiones: [R01, R02, R03, R04, R05, R06, R07, R08, R09, R10, R11, R12, R13, R14, R15, R16, R17, R18]
+
+LISTA DE ADYACENCIA
+S01 UAJS Sede C -> S07 [R01, 4 min, dirigida]; S09 [R03, 5 min, no dirigida]; S02 [R04, 8 min, no dirigida]
+S02 UAJS Sede E -> S01 [R04, 8 min, no dirigida]; S06 [R05, 10 min, dirigida]
+S03 Universidad de Sucre -> S12 [R11, 4 min, no dirigida]
+S04 CECAR -> S11 [R13, 6 min, no dirigida]
+S05 Hospital Universitario -> S09 [R07, 6 min, no dirigida]
+S06 Cl├¡nica Las Am├®ricas -> S05 [R06, 4 min, dirigida]
+S07 Estaci├│n Central SETP -> S01 [R02, 6 min, dirigida]; S09 [R15, 3 min, no dirigida]; S08 [R16, 12 min, dirigida]
+S08 Terminal de Transporte -> S10 [R10, 9 min, dirigida]
+S09 Parque Santander -> S01 [R03, 5 min, no dirigida]; S05 [R07, 6 min, no dirigida]; S10 [R08, 3 min, no dirigida]; S12 [R12, 7 min, no dirigida]; S07 [R15, 3 min, no dirigida]; S03 [R17, 7 min, dirigida]
+S10 Mercado de Sincelejo -> S09 [R08, 3 min, no dirigida]; S08 [R09, 8 min, dirigida]
+S11 PEP Argelia -> S04 [R13, 6 min, no dirigida]; S07 [R14, 8 min, dirigida]
+S12 Glorieta Sincelejito -> S03 [R11, 4 min, no dirigida]; S09 [R12, 7 min, no dirigida]; S04 [R18, 9 min, dirigida]
+
+MATRIZ DE ADYACENCIA (filas=origen, columnas=destino; INF=sin conexion)
+        S01  S02  S03  S04  S05  S06  S07  S08  S09  S10  S11  S12
+   S01    0    8  INF  INF  INF  INF    4  INF    5  INF  INF  INF
+   S02    8    0  INF  INF  INF   10  INF  INF  INF  INF  INF  INF
+   S03  INF  INF    0  INF  INF  INF  INF  INF  INF  INF  INF    4
+   S04  INF  INF  INF    0  INF  INF  INF  INF  INF  INF    6  INF
+   S05  INF  INF  INF  INF    0  INF  INF  INF    6  INF  INF  INF
+   S06  INF  INF  INF  INF    4    0  INF  INF  INF  INF  INF  INF
+   S07    6  INF  INF  INF  INF  INF    0   12    3  INF  INF  INF
+   S08  INF  INF  INF  INF  INF  INF  INF    0  INF    9  INF  INF
+   S09    5  INF    7  INF    6  INF    3  INF    0    3  INF    7
+   S10  INF  INF  INF  INF  INF  INF  INF    8    3    0  INF  INF
+   S11  INF  INF  INF    6  INF  INF    8  INF  INF  INF    0  INF
+   S12  INF  INF    4    9  INF  INF  INF  INF    7  INF  INF    0
+
+MATRIZ DE INCIDENCIA (filas=vertices, columnas=conexiones; -1=origen, +1=destino o extremo no dirigido)
+        R01  R02  R03  R04  R05  R06  R07  R08  R09  R10  R11  R12  R13  R14  R15  R16  R17  R18
+   S01   -1    1    1    1    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+   S02    0    0    0    1   -1    0    0    0    0    0    0    0    0    0    0    0    0    0
+   S03    0    0    0    0    0    0    0    0    0    0    1    0    0    0    0    0    1    0
+   S04    0    0    0    0    0    0    0    0    0    0    0    0    1    0    0    0    0    1
+   S05    0    0    0    0    0    1    1    0    0    0    0    0    0    0    0    0    0    0
+   S06    0    0    0    0    1   -1    0    0    0    0    0    0    0    0    0    0    0    0
+   S07    1   -1    0    0    0    0    0    0    0    0    0    0    0    1    1   -1    0    0
+   S08    0    0    0    0    0    0    0    0    1   -1    0    0    0    0    0    1    0    0
+   S09    0    0    1    0    0    0    1    1    0    0    0    1    0    0    1    0   -1    0
+   S10    0    0    0    0    0    0    0    1   -1    1    0    0    0    0    0    0    0    0
+   S11    0    0    0    0    0    0    0    0    0    0    0    0    1   -1    0    0    0    0
+   S12    0    0    0    0    0    0    0    0    0    0    1    1    0    0    0    0    0   -1
+
+Convenci├│n de incidencia: arco dirigido = -1 en origen y +1 en destino;
+arista no dirigida = +1 en sus dos extremos.
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: 
+==============================================================================
+Q4: Ejecutar BFS y DFS desde S02 y explicar el orden
+==============================================================================
+BFS desde S02 (cola FIFO, por niveles):
+  Orden: S02 (UAJS Sede E) -> S01 (UAJS Sede C) -> S06 (Cl├¡nica Las Am├®ricas) -> S07 (Estaci├│n Central SETP) -> S09 (Parque Santander) -> S05 (Hospital Universitario) -> S08 (Terminal de Transporte) -> S10 (Mercado de Sincelejo) -> S12 (Glorieta Sincelejito) -> S03 (Universidad de Sucre) -> S04 (CECAR) -> S11 (PEP Argelia)
+  Niveles: S02=0, S01=1, S06=1, S07=2, S09=2, S05=2, S08=3, S10=3, S12=3, S03=3, S04=4, S11=5
+  ├ürbol BFS (padre -> hijos):
+    S02 -> S01, S06
+    S01 -> S07, S09
+    S06 -> S05
+    S07 -> S08
+    S09 -> S10, S12, S03
+    S12 -> S04
+    S04 -> S11
+DFS desde S02 (recursi├│n/pila LIFO, por ramas):
+  Preorden: S02 (UAJS Sede E) -> S01 (UAJS Sede C) -> S07 (Estaci├│n Central SETP) -> S09 (Parque Santander) -> S05 (Hospital Universitario) -> S10 (Mercado de Sincelejo) -> S08 (Terminal de Transporte) -> S12 (Glorieta Sincelejito) -> S03 (Universidad de Sucre) -> S04 (CECAR) -> S11 (PEP Argelia) -> S06 (Cl├¡nica Las Am├®ricas)
+  Postorden: S05 (Hospital Universitario) -> S08 (Terminal de Transporte) -> S10 (Mercado de Sincelejo) -> S03 (Universidad de Sucre) -> S11 (PEP Argelia) -> S04 (CECAR) -> S12 (Glorieta Sincelejito) -> S09 (Parque Santander) -> S07 (Estaci├│n Central SETP) -> S01 (UAJS Sede C) -> S06 (Cl├¡nica Las Am├®ricas) -> S02 (UAJS Sede E)
+  Ciclo dirigido detectado: S01 -> S07 -> S01
+  Componentes d├®biles: 1
+    C1: S01 (UAJS Sede C) -> S07 (Estaci├│n Central SETP) -> S11 (PEP Argelia) -> S04 (CECAR) -> S12 (Glorieta Sincelejito) -> S03 (Universidad de Sucre) -> S08 (Terminal de Transporte) -> S10 (Mercado de Sincelejo) -> S09 (Parque Santander) -> S05 (Hospital Universitario) -> S06 (Cl├¡nica Las Am├®ricas) -> S02 (UAJS Sede E)
+Por qu├® puede diferir el orden:
+  BFS usa una cola FIFO y descubre primero todos los vecinos de un nivel.
+  DFS usa recursi├│n (pila LIFO) y agota una rama antes de retroceder.
+  Ambos usan un conjunto de visitados y visitan los mismos v├®rtices alcanzables,
+  pero el orden depende de la estrategia y del orden de la lista de adyacencia.
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: 
+==============================================================================
+Q5: Ruta m├¡nima S02 -> S08 con Dijkstra
+==============================================================================
+  Tiempo total: 24 minutos
+  Ruta: S02 (UAJS Sede E) -> S01 (UAJS Sede C) -> S07 (Estaci├│n Central SETP) -> S08 (Terminal de Transporte)
+  Conexiones: R04 -> R01 -> R16
+[OK] Resultado de control cumplido: 24 minutos.
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: 
+==============================================================================
+Q6: Bloquear R16, recalcular y explicar el cambio
+==============================================================================
+Conexi├│n bloqueada: R16 (S07 -> S08, 12 min, Ruta SETP al terminal).
+Ruta original:
+  Tiempo total: 24 minutos
+  Ruta: S02 (UAJS Sede E) -> S01 (UAJS Sede C) -> S07 (Estaci├│n Central SETP) -> S08 (Terminal de Transporte)
+  Conexiones: R04 -> R01 -> R16
+Ruta con R16 bloqueada:
+  Tiempo total: 24 minutos
+  Ruta: S02 (UAJS Sede E) -> S01 (UAJS Sede C) -> S09 (Parque Santander) -> S10 (Mercado de Sincelejo) -> S08 (Terminal de Transporte)
+  Conexiones: R04 -> R03 -> R08 -> R09
+Explicaci├│n:
+  R16 era el tramo directo S07 -> S08 de 12 minutos. Al bloquearlo,
+  Dijkstra ya no puede relajar esa conexi├│n y busca un camino alternativo.
+  Ruta alternativa: S02 (UAJS Sede E) -> S01 (UAJS Sede C) -> S09 (Parque Santander) -> S10 (Mercado de Sincelejo) -> S08 (Terminal de Transporte) (24 min).
+  El costo se conserva en 24 minutos porque existe una ruta alternativa de igual peso.
+  Lo que cambia es el conjunto de conexiones utilizado.
+  La conexi├│n se restaura autom├íticamente al terminar la consulta.
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: 
+==============================================================================
+Q7: Consultar un v├®rtice inexistente sin terminar el programa
+==============================================================================
+Consultando el v├®rtice S99...
+[ERROR CONTROLADO] El vertice 'S99' no existe en el grafo RedSegura
+La aplicaci├│n captura la excepci├│n y contin├║a; el proceso no termina.
+
+Consultas obligatorias:
+  1. Q1: buscar Hospital Universitario en ABB y AVL
+  2. Q2: demostrar rotaciones LL, RR, LR y RL
+  3. Q3: lista de adyacencia y matrices de adyacencia e incidencia
+  4. Q4: BFS y DFS desde S02
+  5. Q5: Dijkstra de S02 a S08
+  6. Q6: bloquear R16 y recalcular la ruta
+  7. Q7: consultar un v├®rtice inexistente
+  0. Salir
+Seleccione una opci├│n: Fin de la sesi├│n RedSegura.
